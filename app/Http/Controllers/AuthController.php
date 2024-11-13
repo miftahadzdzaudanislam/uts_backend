@@ -20,7 +20,7 @@ class AuthController extends Controller
         User::create($input);
 
         $data = [
-            'message' => 'User berhasil dibuat'
+            'message' => 'Register Successfully'
         ];
 
         return response()->json($data, 200);
@@ -45,14 +45,14 @@ class AuthController extends Controller
             $token = $user->createToken('auth_token');
             
             $data = [
-                'message' => 'Login berhasil',
+                'message' => 'Login Successfully',
                 'token' => $token->plainTextToken
             ];
 
             return response()->json($data, 200);
         } else {
             $data = [
-                'message' => 'Email atau password salah'
+                'message' => 'Email or password is wrong'
             ];
 
             return response()->json($data, 401);
