@@ -9,28 +9,20 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 // Route untuk menampilkan data employees
-Route::get('/employees', [EmployeeController::class, 'index'])
-->middleware('auth:sanctum');
+Route::get('/employees', [EmployeeController::class, 'index']);
 // Route untuk menambahkan data employees
-Route::post('/employees', [EmployeeController::class, 'store'])
-->middleware('auth:sanctum');
+Route::post('/employees', [EmployeeController::class, 'store']);
 // Route untuk melihat detail data employees
-Route::get('/employees/{id}', [EmployeeController::class, 'show'])
-->middleware('auth:sanctum');
+Route::get('/employees/{id}', [EmployeeController::class, 'show']);
 // Route untuk mengedit data employees
-Route::put('/employees/{id}', [EmployeeController::class, 'update'])
-->middleware('auth:sanctum');
+Route::put('/employees/{id}', [EmployeeController::class, 'update']);
 // Route untuk menghapus data employees
-Route::delete('/employees/{id}', [EmployeeController::class, 'destroy'])
-->middleware('auth:sanctum');
+Route::delete('/employees/{id}', [EmployeeController::class, 'destroy']);
 // Route untuk mencari data employees
-Route::get('/employees/search/{name}', [EmployeeController::class, 'search'])
-->middleware('auth:sanctum');
+Route::get('/employees/search/{name}', [EmployeeController::class, 'search']);
 // Route untuk melihat data employees yang aktif
-Route::get('/employees/status/active', [EmployeeController::class, 'active'])
-->middleware('auth:sanctum');
+Route::get('/employees/status/active', [EmployeeController::class, 'active']);
 // Route untuk melihat data employees yang inaktif
-Route::get('/employees/status/inactive', [EmployeeController::class, 'inactive'])
-->middleware('auth:sanctum');
+Route::get('/employees/status/inactive', [EmployeeController::class, 'inactive']);
 // Route untuk melihat data employees yang terminated
-Route::get('/employees/status/terminated', [EmployeeController::class, 'terminated'])->middleware('auth:sanctum');
+Route::get('/employees/status/terminated', [EmployeeController::class, 'terminated']);

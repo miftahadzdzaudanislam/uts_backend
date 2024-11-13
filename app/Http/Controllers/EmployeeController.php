@@ -180,4 +180,64 @@ class EmployeeController extends Controller
             return response()->json($data, 404);
         }
     }
+
+    // Methode untuk mencari data employees
+    public function active() {
+        // mencari data berdasarkan nama
+        $employees = Employee::where('status', 'Active')->get();
+
+        if($employees){
+            $data = [
+                'message' => 'Get Searched Resource',
+                'data' => $employees
+            ];
+    
+            return response()->json($data, 200);
+        } else {
+            $data = [
+                'message' => 'Resource not found'
+            ];
+            return response()->json($data, 404);
+        }
+    }
+
+    // Methode untuk mencari data employees
+    public function inactive() {
+        // mencari data berdasarkan nama
+        $employees = Employee::where('status', 'Inactive')->get();
+
+        if($employees){
+            $data = [
+                'message' => 'Get Searched Resource',
+                'data' => $employees
+            ];
+    
+            return response()->json($data, 200);
+        } else {
+            $data = [
+                'message' => 'Resource not found'
+            ];
+            return response()->json($data, 404);
+        }
+    }
+
+    // Methode untuk mencari data employees
+    public function terminate() {
+        // mencari data berdasarkan nama
+        $employees = Employee::where('status', 'Terminate')->get();
+
+        if($employees){
+            $data = [
+                'message' => 'Get Searched Resource',
+                'data' => $employees
+            ];
+    
+            return response()->json($data, 200);
+        } else {
+            $data = [
+                'message' => 'Resource not found'
+            ];
+            return response()->json($data, 404);
+        }
+    }
 }
