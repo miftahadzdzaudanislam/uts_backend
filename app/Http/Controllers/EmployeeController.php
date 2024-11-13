@@ -164,14 +164,14 @@ class EmployeeController extends Controller
     // Methode untuk mencari data employees
     public function search($name) {
         // mencari data berdasarkan nama
-        $employees = Employee::where();
+        $employees = Employee::where('name', $name)->get();
 
-        if($employees) {
+        if($employees){
             $data = [
                 'message' => 'Get Searched Resource',
                 'data' => $employees
             ];
-
+    
             return response()->json($data, 200);
         } else {
             $data = [
