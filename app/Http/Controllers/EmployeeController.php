@@ -222,9 +222,9 @@ class EmployeeController extends Controller
     }
 
     // Methode untuk mencari data employees
-    public function terminate() {
+    public function terminated() {
         // mencari data berdasarkan nama
-        $employees = Employee::where('status', 'Terminate')->get();
+        $employees = Employee::where('status', 'Terminated')->get();
 
         if($employees){
             $data = [
